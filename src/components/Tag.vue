@@ -25,7 +25,7 @@
             v-show="deletable"
             @click.stop="removeFilter"
         >
-            <img class="w-3 h-3" src="/assets/icons/icon-remove.svg" />
+            <img class="w-3 h-3" src="/assets/icons/icon-remove.svg" :alt="removeButtonAlt" />
         </span>
     </div>
 </template>
@@ -41,6 +41,9 @@
                     'hover:text-white': !this.deletable,
                 };
             },
+            removeButtonAlt() {
+                return `Button to remove ${this.title} from filters`;
+            }
         },
         methods: {
             addFilter(event) {

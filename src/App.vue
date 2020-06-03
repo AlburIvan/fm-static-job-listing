@@ -1,5 +1,5 @@
 <template>
-    <div id="app" class="min-h-screen m-0">
+    <div id="app" class="min-h-screen m-0 bg-background">
         <header class="bg-primary">
             <picture>
                 <source srcset="/assets/images/bg-header-desktop.svg" media="(min-width: 768px)" />
@@ -10,13 +10,13 @@
             </picture>
         </header>
 
-        <section
-            class="flex flex-col min-h-screen p-8 space-y-10 md:space-y-6 md:px-20 lg:px-48 bg-background"
+        <div
+            class="grid row-gap-10 p-8 md:row-gap-6 lg:row-gap-6 grid-col-1 md:py-16 md:px-20 lg:px-48 "
         >
             <transition name="fade">
                 <div
                     id="filterOptions"
-                    class="flex flex-row items-center px-2 py-4 -mt-16 bg-white rounded-md md:px-6 md:py-4 shadow-cyan-xl"
+                    class="flex flex-row items-center px-2 py-4 -mt-16 bg-white rounded-md md:-mt-24 md:px-6 md:py-4 shadow-cyan-xl"
                     v-show="filters.length > 0"
                 >
                     <div class="flex flex-row flex-wrap items-center">
@@ -36,7 +36,7 @@
             <template v-for="(job, index) in jobs">
                 <JobCard :job="job" :key="index" />
             </template>
-        </section>
+        </div>
     </div>
 </template>
 
